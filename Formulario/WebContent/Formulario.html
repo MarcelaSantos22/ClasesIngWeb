@@ -1,0 +1,87 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta content=" charset=UTF-8" />
+<title>Formulario</title>
+<style type="text/css">
+h1 {
+	font: bold small-caps 100% serif;
+	font-size: 40px;
+}
+form {
+	background-color: #87C489;
+	width: 400px;
+	padding: 20px;
+	height: 500px;
+	margin: 20px auto;
+	border-radius: 15px;
+	margin: 20px auto;
+	font: small-caps 50% fantasy;
+}
+body {
+	background: #01DFA5;
+}
+form input, form label {
+	font-size: 16px;
+	margin-bottom: 2px;
+	font-family: "Palatino", sans-serif;
+}
+form input {
+	width: 400px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+form #femenino,#masculino{
+	width: 100px;
+	height:20px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+form  #submit, #reset {
+	width:180px;
+	color: #000000;
+	margin-left: 15px;
+}
+form .required {
+	font-weight: bold;
+	color: #E5E6E7;
+}
+</style>
+</head>
+<body>
+	<h1 align="center">Formulario Web</h1>
+	<br>
+
+	<form name="Datos" action="Guardar" method="post">
+		<div>
+			<label>Nombres: </label><br> <input type="text" name="nombres"
+				required="required">
+		</div>
+		<div>
+			<label>Primer Apellido:</label><br> <input type="text"
+				name="primerApellido" required="required">
+		</div>
+		<div>
+			<label>Segundo Apellido:</label><br> <input type="text"
+				name="segundoApellido" required="required">
+		</div>
+		<div>
+			<label>Cedula:</label><br> <input type="text" name="cedula"
+				required="required">
+		</div>
+    <div>
+			<label>Genero:</label><br>
+			 <input type="radio" id="femenino" name="genero" value="femenino" checked>Femenino
+			<input type="radio" id="masculino" name="genero" value="masculino">Masculino
+		</div>
+		<div>
+			<label>Email:</label><br> <input type="Email" name="email"
+				placeholder="juan@gmail.com" required="required">
+		</div>
+		<br> <input type="submit" id="submit" name="enviar"
+			value="Enviar"> <input type="reset" id="reset" name="reset"
+			value="Cancelar"><br>
+	</form>
+</body>
+</html>
