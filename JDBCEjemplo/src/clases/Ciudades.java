@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Ciudades {
-	public static void main(String[] args) {
+	/*public class Ciudades {
+public static void main(String[] args) {
 		consultarCiudades();
-		/*
+		
 		 * try { Class.forName("com.mysql.jdbc.Driver");
 		 *
 		 * Connection con =
@@ -22,11 +22,11 @@ public class Ciudades {
 		 * + rs.getString("Nombre")); } } catch (ClassNotFoundException e) { //
 		 * TODO Auto-generated catch block e.printStackTrace(); }catch
 		 * (SQLException e) { e.printStackTrace(); }
-		 */ 
+		 
 		
-	}
+	}*/ 
 
-	public static void consultarCiudades() {
+	/*public static void consultarCiudades() {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -38,7 +38,7 @@ public class Ciudades {
       			rs = ps.executeQuery(); // Se ejecuta la consulta.
 
       			while (rs.next()) {
-      				System.out.println(rs.getString("codigo") + ": " + rs.getString("Nombre"));
+      				//System.out.println(rs.getString("codigo") + ": " + rs.getString("Nombre"));
       			}
       		} 
 		catch (ClassNotFoundException e) {
@@ -48,7 +48,7 @@ public class Ciudades {
 		catch (SQLException e) {
       			e.printStackTrace();
       		} 
-		/*finally { // Finalmente se cierra la coneccin a la base de datos.
+		finally { // Finalmente se cierra la coneccin a la base de datos.
       			try { // Se deben cerrar en orden ascendente, desde la ultima
       					// variable que se creo hasta la primera.
       				rs.close();
@@ -59,7 +59,7 @@ public class Ciudades {
 			}
 
 		}
-*/
+
 	}
 
-}
+}*/
