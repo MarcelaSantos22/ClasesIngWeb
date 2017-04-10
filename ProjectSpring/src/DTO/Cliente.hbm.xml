@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/03/2017 12:39:53 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="DTO.Cliente" table="CLIENTES">
+        <id name="apellidos" type="java.lang.String">
+            <column name="APELLIDOS" />
+            <generator class="assigned" />
+        </id>
+        <property name="cedula" type="java.lang.String">
+            <column name="CEDULA" />
+        </property>
+        <property name="nombres" type="java.lang.String">
+            <column name="NOMBRES" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <many-to-one name="usuarioCrea" class="DTO.Usuario" fetch="join">
+            <column name="USUARIOCREA" />
+        </many-to-one>
+        <property name="fechaCreacion" type="java.util.Date">
+            <column name="FECHACREACION" />
+        </property>
+        <many-to-one name="usuarioModifica" class="DTO.Usuario" fetch="join">
+            <column name="USUARIOMODIFICA" />
+        </many-to-one>
+        <property name="fechaModificacion" type="java.util.Date">
+            <column name="FECHAMODIFICACION" />
+        </property>
+        <property name="eliminado" type="java.lang.Boolean">
+            <column name="ELIMINADO" />
+        </property>
+        <many-to-one name="usuarioElimina" class="DTO.Usuario" fetch="join">
+            <column name="USUARIOELIMINA" />
+        </many-to-one>
+        <property name="fechaEliminacion" type="java.util.Date">
+            <column name="FECHAELIMINACION" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/03/2017 12:39:53 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="DTO.Usuario" table="USUARIOS">
+        <id name="login" type="java.lang.String" access="field">
+            <column name="LOGIN" precision="15" />
+            <generator class="assigned" />
+        </id>
+        <property name="apellidos" type="java.lang.String" access="field">
+            <column name="APELLIDOS" />
+        </property>
+        <property name="nombres" type="java.lang.String" access="field">
+            <column name="NOMBRES" />
+        </property>
+        <property name="contrasena" type="java.lang.String" access="field">
+            <column name="CONTRASENA" />
+        </property>
+         <many-to-one name="rol" class="DTO.Usuario" lazy="proxy" fetch="join">  <!-- Fetch = "join" : Para hacer el join con la tabla Rol-->
+        	<column name="ROL" length="12"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
