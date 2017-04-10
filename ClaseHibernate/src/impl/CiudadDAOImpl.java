@@ -20,27 +20,18 @@ import org.hibernate.criterion.Restrictions;
 import DTO.Ciudad;
 import exception.MyException;
 import DAO.CiudadDAO;
+import DAO.DataSource;
 
 // Clase para el DAO
 public class CiudadDAOImpl implements CiudadDAO {
-private SessionFactory sessionFactory;
 	
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-
 	@Override
 	public List<Ciudad> obtener() throws MyException {
 		List<Ciudad> lista = new ArrayList<Ciudad>();
 		Session session = null;
 		
 		try {
-			session = sessionFactory.getCurrentSession();
+			session = DataSource.getInstance().getSession();
 			Criteria criteria = session.createCriteria(Ciudad.class);
 			lista = criteria.list();
 			
@@ -57,7 +48,7 @@ private SessionFactory sessionFactory;
 		Session session = null;
 		
 		try {
-			session = sessionFactory.getCurrentSession();
+			session = DataSource.getInstance().getSession();
 			//Consulta para devolver una ciudad dependiendo del codigo
 			/*Criteria criteria = session.createCriteria(Ciudad.class); //Para crear la consulta a la base de datos
 			criteria.add(Restrictions.eq("codigo", id)); //Agregando condicion a la consulta
@@ -79,11 +70,11 @@ private SessionFactory sessionFactory;
 		Session session = null;
 		
 		try {
-			session = sessionFactory.getCurrentSession(); //PAra conectarse a la bd, va y busca una coneccion que este abierta y se conecta
-			/*tx = session.beginTransaction(); //Se inicia una nueva transaccion a la bd
+			session = DataSource.getInstance().getSession(); //PAra conectarse a la bd, va y busca una coneccion que este abierta y se conecta
+			tx = session.beginTransaction(); //Se inicia una nueva transaccion a la bd
 			session.save(ciudad); //Se guarda la ciudad en la bd
 			tx.commit(); //Para hacer persistente el cambio en la bd
-			*/
+			
 		} catch (HibernateException e) {
 			throw new MyException("Error ingresando la ciudad",e);
 		}
@@ -94,10 +85,10 @@ private SessionFactory sessionFactory;
 		Session session = null;
 		
 		try {
-			session = sessionFactory.getCurrentSession();
-//			tx = session.beginTransaction(); //Se inicia una nueva transaccion a la bd
-//			session.update(ciudad); //Se guarda la ciudad en la bd
-//			tx.commit(); //Para hacer persistente el cambio en la bd
+			session = DataSource.getInstance().getSession();
+			tx = session.beginTransaction(); //Se inicia una nueva transaccion a la bd
+			session.update(ciudad); //Se guarda la ciudad en la bd
+			tx.commit(); //Para hacer persistente el cambio en la bd
 			
 		} catch (HibernateException e) {
 			throw new MyException("Error modificando la ciudad",e);
@@ -109,10 +100,10 @@ private SessionFactory sessionFactory;
 		Session session = null;
 		
 		try {
-			session = sessionFactory.getCurrentSession();
-//			tx = session.beginTransaction(); //Se inicia una nueva transaccion a la bd
-//			session.delete(ciudad);; //Se guarda la ciudad en la bd (saveOrUpdate: Cuando no se sabe si la instancia esta creada o no)
-//			tx.commit(); //Para hacer persistente el cambio en la bd
+			session = DataSource.getInstance().getSession();
+			tx = session.beginTransaction(); //Se inicia una nueva transaccion a la bd
+			session.delete(ciudad);; //Se guarda la ciudad en la bd (saveOrUpdate: Cuando no se sabe si la instancia esta creada o no)
+			tx.commit(); //Para hacer persistente el cambio en la bd
 			
 		} catch (HibernateException e) {
 			throw new MyException("Error eliminando la ciudad",e);
