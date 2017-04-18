@@ -22,6 +22,7 @@
 					<value>DTO/Usuario.hbm.xml</value>
 					<value>DTO/Cliente.hbm.xml</value>
 					<value>DTO/Direccion.hbm.xml</value>
+					
 				</list>
 			</property>
 			<property name="hibernateProperties">
@@ -44,6 +45,10 @@
 		</bean>
 		<bean id="usuarioDAO" class="implDAO.UsuarioDAOimpl">
 			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<bean id="clienteBL" class="bl.ClienteBL">
+			<property name="clienteDAO" ref="clienteDAO"></property>
+			<property name="usuarioDAO" ref="usuarioDAO"></property>
 		</bean>
 
 </beans>

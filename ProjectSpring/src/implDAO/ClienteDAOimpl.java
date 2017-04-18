@@ -11,7 +11,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 
 import DAO.ClienteDAO;
-import DTO.Ciudad;
 import DTO.Cliente;
 import exception.MyException;
 

@@ -6,7 +6,6 @@ package DAO;
  *
  */
 
-import java.util.List;
 
 import DTO.Usuario;
 import exception.MyException;

@@ -1,14 +1,14 @@
 package DTO;
 
 public class Rol {
-	private long codigo;
+	private String codigo;
 	private String nombre;
 	
 	
-	public long getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(long codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	public String getNombre() {

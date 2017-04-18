@@ -27,5 +27,10 @@
 	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/Spring4/spring-web-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/commons-validator-1.6/commons-validator-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/commons-validator-1.6/commons-validator-1.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/commons-validator-1.6/commons-validator-1.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/commons-validator-1.6/commons-validator-1.6-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Documents/UdeA/Ing Web/commons-validator-1.6/commons-validator-1.6-test-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
