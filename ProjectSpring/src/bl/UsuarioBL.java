@@ -16,16 +16,22 @@ public class UsuarioBL {
 		this.usuarioDAO = usuarioDAO;
 	}
 
-	//Validar que el usuario ingresado exista, y que la contrase�a este correcta
-	public boolean validateLogin(String login, String pws) throws MyException {
+	//Validar que el usuario ingresado exista, y que la contrase�a este correcta
+	public void validateLogin(String login, String pws) throws MyException {
+		if ((login == null) || ("".equals(login))) {
+			throw new MyException("Usuario o Contraseña Incorrecto");
+		}
+		if ((pws == null) || ("".equals(pws))) {
+			throw new MyException("Usuario o Contraseña Incorrecto");
+		}
+		
+		
 		Usuario usuario = usuarioDAO.obtener(login);
 
 		if (usuario == null) {
-			throw new MyException("El usuario no existe en el sistema");
-		} else if (usuario.getContrasena().equals(pws)) {
-			return true;
-		} else {
-			return false;
+			throw new MyException("Usuario o Contraseña Incorrecto");
+		} else if (!usuario.getContrasena().equals(pws)) {
+			throw new MyException("Usuario o Contraseña Incorrecto");
 		}
 	}
 }
