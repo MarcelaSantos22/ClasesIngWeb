@@ -1,7 +1,7 @@
 package DAO;
 
 /**
- * Inteface con los metodos del DAO para ciudad
+ * Interface con los metodos del DAO para ciudad
  * @author Yuri Marcela Quejada - ymarcela.quejada@udea.edu.co
  *
  */

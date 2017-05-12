@@ -3,6 +3,7 @@ package bl;
 import java.util.Date;
 import java.util.List;
 import org.apache.commons.validator.routines.EmailValidator;
+import org.springframework.transaction.annotation.Transactional;
 
 import DAO.ClienteDAO;
 import DAO.UsuarioDAO;
@@ -10,6 +11,7 @@ import DTO.Cliente;
 import DTO.Usuario;
 import exception.MyException;
 
+@Transactional
 public class ClienteBL {
 	// Creamos las instancias
 	private ClienteDAO clienteDAO;

@@ -50,6 +50,10 @@
 			<property name="clienteDAO" ref="clienteDAO"></property>
 			<property name="usuarioDAO" ref="usuarioDAO"></property>
 		</bean>
-		<context:component-scan base-package="ws"></context:component-scan>
+		<bean id="usuarioBL" class="bl.UsuarioBL">
+			<property name="usuarioDAO" ref="usuarioDAO"></property>
+		</bean>
+		<tx:annotation-driven />
+		<context:component-scan base-package="services"></context:component-scan>
 
 </beans>

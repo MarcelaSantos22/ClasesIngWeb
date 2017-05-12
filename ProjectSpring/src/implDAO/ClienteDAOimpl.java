@@ -16,6 +16,8 @@ import exception.MyException;
 
 public class ClienteDAOimpl implements ClienteDAO {
 	private SessionFactory sessionFactory;
+	private Session session;
+	private Transaction transaction;
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -27,7 +29,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 
 	@Override
 	public List<Cliente> obtener() throws MyException {
-		Session session = null;
+		session = null;
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		Criteria criteria = null;
 
@@ -47,7 +49,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 	@Override
 	public Cliente obtener(String cedula) throws MyException {
 		Cliente cliente = new Cliente();
-		Session session = null;
+		session = null;
 		try {
 			session = sessionFactory.getCurrentSession();
 			cliente = (Cliente) session.get(Cliente.class, cedula);
@@ -62,7 +64,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 
 	@Override
 	public void guardar(Cliente cliente) throws MyException {
-		Session session = null;
+		session = null;
 
 		try {
 			session = sessionFactory.getCurrentSession();
@@ -78,8 +80,8 @@ public class ClienteDAOimpl implements ClienteDAO {
 
 	@Override
 	public void modificar(Cliente cliente) throws MyException {
-		Session session = null;
-		Transaction transaction = null;
+		session = null;
+		transaction = null;
 
 		try {
 			session = sessionFactory.getCurrentSession();

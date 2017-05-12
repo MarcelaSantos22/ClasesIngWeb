@@ -1,7 +1,7 @@
 package DAO;
 
 /**
- * Inteface con los metodos del DAO para cliente
+ * Interface con los metodos del DAO para cliente
  * @author Yuri Marcela Quejada - ymarcela.quejada@udea.edu.co
  *
  */

@@ -16,6 +16,7 @@ import DAO.CiudadDAO;
 // Clase para el DAO
 public class CiudadDAOImpl implements CiudadDAO {
 	private SessionFactory sessionFactory;
+	private Session session;
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -28,7 +29,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	@Override
 	public List<Ciudad> obtener() throws MyException {
 		List<Ciudad> lista = new ArrayList<Ciudad>();
-		Session session = null;
+		session = null;
 		Criteria criteria = null;
 
 		try {
@@ -46,7 +47,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	@Override
 	public Ciudad obtener(Long id) throws MyException {
 		Ciudad ciudad = new Ciudad();
-		Session session = null;
+		session = null;
 
 		try {
 			session = sessionFactory.getCurrentSession();
@@ -70,7 +71,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 
 	public void guardar(Ciudad ciudad) throws MyException {
-		Session session = null;
+		session = null;
 
 		try {
 			session = sessionFactory.getCurrentSession(); // Para conectarse a
@@ -90,7 +91,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 
 	public void modificar(Ciudad ciudad) throws MyException {
-		Session session = null;
+		session = null;
 
 		try {
 			session = sessionFactory.getCurrentSession();
@@ -106,7 +107,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 
 	public void eliminar(Ciudad ciudad) throws MyException {
-		Session session = null;
+		session = null;
 
 		try {
 			session = sessionFactory.getCurrentSession();
