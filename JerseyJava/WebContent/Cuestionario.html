@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+<meta charset="ISO-8859-1">
+<title>Cuestionario</title>
+<script type="text/javascript" src="Recursos/JS/angular.min.js"></script>
+<script type="text/javascript" src="Recursos/JS/CuestionarioJS.js"></script>
+<link type="text/css" rel="stylesheet" href="Recursos/css/estilo.css" />
+</head>
+<body ng-app="modCuestionario">
+	<div ng-controller="contCuestionario">
+		<div class="preguntas">
+			<div ng-repeat="pregunta in preguntas" class="pregunta">
+				<p class="estado-{{pregunta.estado}}">{{pregunta.texto}}</p>
+				<div ng-repeat="respuesta in pregunta.respuestas">
+					<input type="radio" value="{{respuesta.id}}"
+						name="pregunta{{pregunta.id}}"
+						id="respuesta{{pregunta.id}}{{respuesta.id}}"
+						ng-model="pregunta.respuesta" /> <label
+						for="respuesta{{pregunta.id}}{{respuesta.id}}">
+						{{respuesta.texto}}</label>
+				</div>
+			</div>
+			<div class="btns">
+				<button class="btn-send" ng-click="validar()"><strong>Enviar</strong></button>
+				<button class="btn-clear" ng-click="clear()"><strong>Limpiar</strong></button>
+			</div>
+		</div>
+		<div class="estadoUsuario {{estadoUsuario}}">
+			<span> Has acertado {{respuestasCorrectas}} de
+				{{preguntas.length}}</span>
+		</div>
+	</div>
+</body>
+</html>
