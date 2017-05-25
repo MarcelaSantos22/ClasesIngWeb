@@ -14,7 +14,7 @@ import com.sun.org.glassfish.external.probe.provider.annotations.Probe;
 import bl.UsuarioBL;
 import exception.MyException;
 
-@Path("usuario")
+@Path("Usuario")
 @Component
 public class UsuarioWS {
 	@Autowired

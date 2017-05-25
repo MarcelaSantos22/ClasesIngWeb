@@ -33,9 +33,10 @@ public class ClienteWS {
 			@QueryParam("usuarioCrea") String usuarioCrea) throws RemoteException {
 
 		try {
+			System.out.println("cedula: "+ cedula);
 			clienteBL.guardar(cedula, nombres, apellidos, email, usuarioCrea);
 		} catch (MyException e) {
-			throw new RemoteException("Error creando el cliente");
+			throw new RemoteException("Error creando el cliente " + e);
 			// TODO: handle exception
 		}
 	}

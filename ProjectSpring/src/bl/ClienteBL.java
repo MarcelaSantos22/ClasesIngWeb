@@ -1,5 +1,6 @@
 package bl;
 
+import java.io.Console;
 import java.util.Date;
 import java.util.List;
 import org.apache.commons.validator.routines.EmailValidator;
@@ -45,6 +46,7 @@ public class ClienteBL {
 
 		// Validar que los campos ingresados no esten vacios
 		if ((cedula == null) || ("".equals(cedula))) {
+			System.out.println("cedula: "+ cedula);
 			throw new MyException("La cedula no puede ser vacia");
 		}
 		if ((nombres == null) || ("".equals(nombres))) {
